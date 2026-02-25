@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('journal_entries', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->date('entry_date');
             $table->enum('reference_type', ['sale', 'purchase', 'opening_stock']);
-            $table->ulid('reference_id')->nullable();
+            $table->uuid('reference_id')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();

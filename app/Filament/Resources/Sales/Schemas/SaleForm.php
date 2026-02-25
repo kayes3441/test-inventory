@@ -104,7 +104,7 @@ class SaleForm
                     ->columnSpan(2),
 
                 Section::make('Sale Details')
-                    ->extraAttributes(['style' => 'max-height: calc(100vh - 12rem); overflow-y: auto;'])
+                    ->extraAttributes(['style' => 'max-height: calc(80vh - 10rem); overflow-y: auto;'])
                     ->schema([
                         Select::make('payment_status')
                             ->label('Payment Status')

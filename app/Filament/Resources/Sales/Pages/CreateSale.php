@@ -26,4 +26,9 @@ class CreateSale extends CreateRecord
         $data['sale_date'] = now();
         return $data;
     }
+
+    protected function afterCreate(): void
+    {
+        \App\Services\AccountingService::recordSale($this->record);
+    }
 }
